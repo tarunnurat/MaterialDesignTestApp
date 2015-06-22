@@ -19,10 +19,6 @@
         android:layout_above="@id/toolbar_bottom"
         android:layout_below="@id/toolbar_top">
 
-    <include
-        android:id="@+id/main_pic_iv"
-        layout="@layout/main_pic_iv"/>
-
     </LinearLayout>
 
 

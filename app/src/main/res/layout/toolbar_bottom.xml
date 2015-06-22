@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
-    android:background="@color/primary"
-    android:elevation="100dp"
+    android:background="#ffffff"
+    android:elevation="20dp"
     android:minHeight="?attr/actionBarSize">
 
 </android.support.v7.widget.Toolbar>

@@ -40,4 +40,5 @@ public class ParallaxScrollingActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

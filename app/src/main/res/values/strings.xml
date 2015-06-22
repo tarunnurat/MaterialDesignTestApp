@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MaterialDesignTestApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_parallax_scrolling">ParallaxScrollingActivity</string>
+    <string name="title_activity_vector_drawable">VectorDrawableActivity</string>
+    <string name="title_activity_xyz">xyz</string>
+</resources>

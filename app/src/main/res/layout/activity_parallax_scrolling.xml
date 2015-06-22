@@ -1,25 +1,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.tarunnurat.materialdesigntestapp.ParallaxScrollingActivity">
 
+
     <include
         android:id="@+id/toolbar_top"
         layout="@layout/toolbar_top" />
-
 
     <include
         android:id="@+id/toolbar_bottom"
         layout="@layout/toolbar_bottom" />
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/toolbar_bottom"
-        android:layout_below="@id/toolbar_top">
-
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_above="@id/toolbar_top"
+        android:layout_below="@id/toolbar_bottom">
 
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/toolbar_bottom"
+            android:layout_centerHorizontal="true" />
+
+        <com.software.shell.fab.ActionButton
+            android:id="@+id/action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imageView"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/fab_margin" />
+
+    </RelativeLayout>
+</>

@@ -1,10 +1,10 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
+<com.nirhart.parallaxscroll.views.ParallaxScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:parallax_factor="1.9"
     tools:context="com.example.tarunnurat.materialdesigntestapp.ParallaxScrollingActivity">
-
 
 
     <RelativeLayout
@@ -21,21 +21,33 @@
             layout="@layout/toolbar_bottom" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/main_pic_iv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/toolbar_top"
             android:layout_above="@id/toolbar_bottom"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@id/toolbar_top"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/main_pic"/>
+
+        <ImageView
+            android:id="@+id/second_pic_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_pic_iv"
+            android:src="@drawable/second_pic"/>
+
+
 
         <com.software.shell.fab.ActionButton
             android:id="@+id/action_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/imageView"
+            android:layout_alignBottom="@id/main_pic_iv"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="-32dp"
-            android:layout_marginRight="@dimen/fab_margin" />
+            android:layout_marginRight="@dimen/fab_margin"
+            android:elevation="10dp" />
 
     </RelativeLayout>
-</>
+
+</com.nirhart.parallaxscroll.views.ParallaxScrollView>

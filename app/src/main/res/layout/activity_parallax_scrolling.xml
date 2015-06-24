@@ -1,53 +1,86 @@
-<com.nirhart.parallaxscroll.views.ParallaxScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:parallax_factor="1.9"
-    tools:context="com.example.tarunnurat.materialdesigntestapp.ParallaxScrollingActivity">
 
+    tools:context="com.example.tarunnurat.materialdesigntestapp.ParallaxScrollingActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
 
         <include
             android:id="@+id/toolbar_top"
-            layout="@layout/toolbar_top" />
-
-        <include
-            android:id="@+id/toolbar_bottom"
-            layout="@layout/toolbar_bottom" />
+            layout="@layout/toolbar_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <ImageView
             android:id="@+id/main_pic_iv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/toolbar_bottom"
             android:layout_below="@id/toolbar_top"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/main_pic"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/main_pic" />
 
-        <ImageView
-            android:id="@+id/second_pic_iv"
+
+        <com.nirhart.parallaxscroll.views.ParallaxScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/main_pic_iv"
-            android:src="@drawable/second_pic"/>
+            android:layout_height="match_parent"
+            app:parallax_factor="1.9"
+            inner_parallax_factor="1.9"
+            app:parallax_views_num="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:id="@+id/second_pic_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/second_pic" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="4dp"
+                    android:id="@+id/toolbar_bottom_rl">
+
+                    <include
+                        android:id="@+id/toolbar_bottom"
+                        layout="@layout/toolbar_bottom" />
+
+
+                    <com.software.shell.fab.ActionButton
+                        android:id="@+id/action_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@id/toolbar_bottom"
+                        android:layout_marginRight="@dimen/fab_margin"
+                        android:layout_marginTop="-32dp"
+                        android:elevation="10dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
 
 
 
-        <com.software.shell.fab.ActionButton
-            android:id="@+id/action_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/main_pic_iv"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="-32dp"
-            android:layout_marginRight="@dimen/fab_margin"
-            android:elevation="10dp" />
+        </com.nirhart.parallaxscroll.views.ParallaxScrollView>
 
     </RelativeLayout>
 
-</com.nirhart.parallaxscroll.views.ParallaxScrollView>
+
+</RelativeLayout>
+

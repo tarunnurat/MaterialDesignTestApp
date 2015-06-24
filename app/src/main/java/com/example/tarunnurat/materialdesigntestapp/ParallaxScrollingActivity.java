@@ -40,13 +40,14 @@ public class ParallaxScrollingActivity extends ActionBarActivity {
         }
         // setting second pic behind action bar.
         LinearLayout.LayoutParams secondPicIvParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        LinearLayout.LayoutParams toolBarBottomParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        //LinearLayout.LayoutParams toolBarBottomParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        secondPicIvParams.topMargin = (int) (displayHeight - (1.5 * actionBarHeight));
-        toolBarBottomParams.topMargin = (int) (displayHeight - (1.5 * actionBarHeight));
+        //secondPicIvParams.topMargin = -1 * (int) (displayHeight - (1.5 * actionBarHeight));
+        //toolBarBottomParams.topMargin = (int) (displayHeight - (1.5 * actionBarHeight));
 
         RelativeLayout bottomToolBarLayout = (RelativeLayout) findViewById(R.id.toolbar_bottom_rl);
-        bottomToolBarLayout.setLayoutParams(toolBarBottomParams);
+        //bottomToolBarLayout.setLayoutParams(toolBarBottomParams);
+        secondPicIvParams.topMargin = -200;
         second_pic_iv.setLayoutParams(secondPicIvParams);
 
     }

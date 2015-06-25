@@ -8,10 +8,10 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+
+import com.nirhart.parallaxscroll.views.ParallaxScrollView;
 
 
 @SuppressWarnings("deprecation")
@@ -25,12 +25,11 @@ public class ParallaxScrollingActivity extends ActionBarActivity {
         Toolbar toolBarTop = (Toolbar) findViewById(R.id.toolbar_top);
         setSupportActionBar(toolBarTop);
 
+
+
         DisplayMetrics displaymetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-        int displayHeight = displaymetrics.heightPixels;
-
-        ImageView second_pic_iv = (ImageView)findViewById(R.id.second_pic_iv);
-
+        final int displayHeight = displaymetrics.heightPixels;
 
         int actionBarHeight = 0;
         TypedValue tv = new TypedValue();
@@ -38,6 +37,21 @@ public class ParallaxScrollingActivity extends ActionBarActivity {
         {
             actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
         }
+
+        ImageView second_pic_iv = (ImageView)findViewById(R.id.second_pic_iv);
+        second_pic_iv.getLayoutParams().height = (int) (1.75 * displayHeight) - actionBarHeight;
+        second_pic_iv.setLayoutParams(second_pic_iv.getLayoutParams());
+        /*
+        View tv_ll = findViewById(R.id.toolbar_bottom_rl);
+        tv_ll.getLayoutParams().height = (int) (2.5 * displayHeight);
+        tv_ll.setLayoutParams(tv_ll.getLayoutParams());
+
+        Toast.makeText(this, "height: " + displayHeight, Toast.LENGTH_LONG).show();
+
+
+
+
+
         // setting second pic behind action bar.
         LinearLayout.LayoutParams secondPicIvParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         //LinearLayout.LayoutParams toolBarBottomParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -49,6 +63,37 @@ public class ParallaxScrollingActivity extends ActionBarActivity {
         //bottomToolBarLayout.setLayoutParams(toolBarBottomParams);
         secondPicIvParams.topMargin = -200;
         second_pic_iv.setLayoutParams(secondPicIvParams);
+
+
+
+
+        LinearLayout ll = (LinearLayout) findViewById(R.id.ll);
+
+        getLayoutInflater().inflate(R.layout.test, ll);
+        */
+
+        final ParallaxScrollView pv = (ParallaxScrollView)findViewById(R.id.ps);
+        pv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+
+            @Override
+            public void onScrollChanged() {
+
+                int scrollY = pv.getScrollY(); //for verticalScrollView
+                //DO SOMETHING WITH THE SCROLL COORDINATES
+                if (scrollY > 555) {
+                    ImageView second_pic_iv = (ImageView) findViewById(R.id.second_pic_iv);
+                    second_pic_iv.setPadding(0, 0, 0, scrollY - 555);
+                    ImageView iv = (ImageView) findViewById(R.id.iv);
+                    iv.getLayoutParams().height = 300;
+                    iv.setLayoutParams(iv.getLayoutParams());
+                    //Log.d("PSActivity", "height: " + scrollY);
+                }
+
+                /*
+                */
+
+            }
+        });
 
     }
 

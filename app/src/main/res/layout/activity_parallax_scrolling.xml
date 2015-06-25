@@ -1,90 +1,89 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.nirhart.parallaxscroll.views.ParallaxScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ps"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
 
-    tools:context="com.example.tarunnurat.materialdesigntestapp.ParallaxScrollingActivity">
+    android:orientation="vertical"
+    app:circular_parallax="true"
+    app:inner_parallax_factor="1.5"
+    app:parallax_factor="1"
+    app:parallax_views_num="3">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <include
-            android:id="@+id/toolbar_top"
-            layout="@layout/toolbar_top"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:id="@+id/main_pic_iv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/toolbar_top"
-            android:layout_centerHorizontal="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/main_pic" />
-
-
-        <!--com.nirhart.parallaxscroll.views.ParallaxScrollView
-            inner_parallax_factor="1.9"
-            android:layout_width="match_parent"
-            android:id="@+id/ps"
-            android:layout_height="match_parent"
-            app:parallax_factor="1.9"
-            app:parallax_views_num="1"-->
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <LinearLayout
+            android:id="@+id/image_ll"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_alignBottom="@id/main_pic_iv"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-
-            <RelativeLayout
-                android:id="@+id/toolbar_bottom_rl"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-60dp"
-                android:elevation="20dp">
-
-                <include
-                    android:id="@+id/toolbar_bottom"
-                    layout="@layout/toolbar_bottom" />
-
-
-                <com.software.shell.fab.ActionButton
-                    android:id="@+id/action_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@id/toolbar_bottom"
-                    android:layout_marginRight="@dimen/fab_margin"
-                    android:layout_marginTop="-32dp"
-                    android:alpha="255"
-                    android:elevation="10dp" />
-            </RelativeLayout>
+            <include
+                android:id="@+id/toolbar_top"
+                layout="@layout/toolbar_top" />
 
             <ImageView
-                android:id="@+id/second_pic_iv"
+                android:id="@+id/main_pic_iv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="-60dp"
-                android:adjustViewBounds="true"
+                android:layout_height="470dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/second_pic" />
-
-
+                android:src="@drawable/main_pic" />
         </LinearLayout>
 
 
-        <!--/com.nirhart.parallaxscroll.views.ParallaxScrollView-->
+        <RelativeLayout
+            android:id="@+id/toolbar_bottom_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-60dp"
+            android:elevation="20dp">
 
-    </RelativeLayout>
+            <include
+                android:id="@+id/toolbar_bottom"
+                layout="@layout/toolbar_bottom" />
 
 
-</RelativeLayout>
+            <com.software.shell.fab.ActionButton
+                android:id="@+id/action_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/toolbar_bottom"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:layout_marginTop="-32dp"
+                android:alpha="255"
+                android:elevation="10dp" />
+
+
+            <!--ImageView
+                android:id="@+id/iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBaseline="@id/toolbar_bottom"
+                android:background="#FFFFFF"
+                android:scaleType="fitXY" /-->
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/second_pic_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-60dp"
+            android:layout_weight="0.1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/second_pic" />
+
+    </LinearLayout>
+
+
+</com.nirhart.parallaxscroll.views.ParallaxScrollView>
 

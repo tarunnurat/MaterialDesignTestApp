@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignBottom="@id/main_pic_iv"
+    android:orientation="vertical">
+
+
+    <!--RelativeLayout
+        android:elevation="20dp"
+        android:id="@+id/toolbar_bottom_rl"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-60dp"
+        android:layout_width="match_parent">
+
+        <include
+            android:id="@+id/toolbar_bottom"
+            layout="@layout/toolbar_bottom" />
+
+
+        <com.software.shell.fab.ActionButton
+            android:alpha="255"
+            android:elevation="10dp"
+            android:id="@+id/action_button"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/toolbar_bottom"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_marginTop="-32dp"
+            android:layout_width="wrap_content" />
+    </RelativeLayout>
+
+    <ImageView
+        android:adjustViewBounds="true"
+        android:id="@+id/second_pic_iv"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-60dp"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/second_pic" /-->
+
+    <include
+        android:id="@+id/toolbar_bottom"
+        layout="@layout/toolbar_bottom" />
+
+    <ImageView
+        android:id="@+id/second_pic_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-60dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/second_pic" />
+
+
+</LinearLayout>
+
+
+
+
